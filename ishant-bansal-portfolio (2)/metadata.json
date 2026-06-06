@@ -1,0 +1,6 @@
+{
+  "name": "Ishant Bansal Portfolio",
+  "description": "An immersive 3D portfolio featuring GSAP animations and WebGL experiences.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
