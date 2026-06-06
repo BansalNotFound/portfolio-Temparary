@@ -1,12 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { soundManager } from '../lib/sound';
 
-export function ScrollLine() {
+export function ScrollLine({ isInteractable = true }: { isInteractable?: boolean }) {
   const pathRefs = useRef<(SVGPathElement | null)[]>([]);
   const progressPathRefs = useRef<(SVGPathElement | null)[]>([]);
   const [progress, setProgress] = useState(0);
   const LINE_COUNT = 7;
   const lineOffsets = [-15, -10, -5, 0, 5, 10, 15];
+
+  const isInteractableRef = useRef(isInteractable);
+  useEffect(() => {
+    isInteractableRef.current = isInteractable;
+  }, [isInteractable]);
 
   useEffect(() => {
     let animationFrameId: number;
@@ -20,6 +25,8 @@ export function ScrollLine() {
     let prevDx = 1000; // start outside
 
     const handleMouseMove = (e: MouseEvent) => {
+      if (!isInteractableRef.current) return;
+      
       const dx = e.clientX - xBase;
       
       if (Math.abs(dx) < 150 && Math.abs(prevDx) >= 150) {

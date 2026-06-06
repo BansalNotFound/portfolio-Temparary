@@ -13,7 +13,6 @@ import {
   ScrollLine,
   MangaModeToggle,
   SpeedLinesOverlay,
-  SpeedLinesOverlay,
   MangaDivider,
   SoundToggle,
   Contact,
@@ -48,7 +47,7 @@ export default function DesktopApp() {
       <LanguageToggle />
       <SoundToggle />
       <CustomCursor />
-      <ScrollLine />
+      <ScrollLine isInteractable={!loading} />
       <MangaModeToggle />
       <SpeedLinesOverlay />
 
