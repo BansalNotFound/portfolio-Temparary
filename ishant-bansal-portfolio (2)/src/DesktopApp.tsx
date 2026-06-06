@@ -13,7 +13,7 @@ import {
   ScrollLine,
   MangaModeToggle,
   SpeedLinesOverlay,
-  ScreentoneShaderOverlay,
+  SpeedLinesOverlay,
   MangaDivider,
   SoundToggle,
   Contact,
@@ -51,7 +51,7 @@ export default function DesktopApp() {
       <ScrollLine />
       <MangaModeToggle />
       <SpeedLinesOverlay />
-      <ScreentoneShaderOverlay />
+
       {loading && <Preloader onComplete={() => setLoading(false)} />}
       
       <ReactLenis root options={{ smoothWheel: true, duration: 2.0, touchMultiplier: 2 }}>
